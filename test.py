@@ -1,4 +1,4 @@
-from characterAIClient import ChatAI
+from modulos.characterAIClient import ChatAI
 
 # Define tu token y char_id. Asegúrate de tener estos valores antes de probar.
 token = '760259b09e5a42f9dd96f55f4b4871a8580a998f'  # Reemplázalo con tu token real

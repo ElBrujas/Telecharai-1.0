@@ -2,3 +2,5 @@ pydantic>=2.7.1
 websockets
 curl_cffi
 python-dotenv
+pyTelegramBotAPI
+git+https://github.com/kramcat/CharacterAI.git
