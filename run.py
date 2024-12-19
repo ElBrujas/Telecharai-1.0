@@ -2,7 +2,7 @@ import datetime
 import telebot
 import os
 
-from modulos.characterAIClient import ChatAI
+from modulos.CharacterAIClient import ChatAI
 from telebot import types
 from datetime import datetime
 
