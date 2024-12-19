@@ -4,7 +4,6 @@ import os
 
 from modulos.CharacterAIClient import ChatAI
 from modulos.MonitorAgenda import MonitorAgenda
-from telebot import types
 from datetime import datetime
 
 from dotenv import load_dotenv
