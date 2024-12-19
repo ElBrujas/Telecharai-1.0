@@ -3,12 +3,11 @@ import telebot
 import os
 
 from modulos.CharacterAIClient import ChatAI
+from modulos.MonitorAgenda import MonitorAgenda
 from telebot import types
 from datetime import datetime
 
-
 from dotenv import load_dotenv
-
 
 # Cargar las variables del archivo .env
 load_dotenv()
@@ -54,6 +53,16 @@ def responder_mensaje(message):
     else:
         # Responder si el usuario no está autorizado
         bot.reply_to(message, "No estás autorizado para usar este bot.")
+
+#Definimos los callbacks -----------------------------------------------------------------
+def res_recordatorio_ai(actividad):
+    texto = f'#Modulo recordatorio \n Son las {datetime.now().strftime("%H:%M")} \n Es hora de recordar al usuario sobre: {actividad}'
+    respuesta = bot_ai.chat_with_ai(texto)
+    bot.send_message(ID_TG_USER, respuesta)
+
+#Instanciamos los modulos ----------------------------------------------------------------
+monitorAgenda = MonitorAgenda("./raws/agenda.csv", res_recordatorio_ai)
+monitorAgenda.iniciar_monitor()
 
 # Iniciar el bot de Telegram
 if __name__ == "__main__":
